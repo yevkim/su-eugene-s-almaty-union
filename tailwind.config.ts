@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "hero-overlay": "hsl(var(--hero-overlay))",
+        "section-alt": "hsl(var(--section-alt))",
+        "rsvp-highlight": "hsl(var(--rsvp-highlight))",
+      },
+      fontFamily: {
+        serif: ['Playfair Display', 'serif'],
+        sans: ['Inter', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
