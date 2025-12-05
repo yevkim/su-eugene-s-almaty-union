@@ -55,23 +55,14 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in duration-1000 delay-500">
+          <div className="flex justify-center animate-in fade-in duration-1000 delay-500">
             <Button 
               size="lg" 
               onClick={() => document.getElementById('rsvp')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-rsvp-highlight hover:bg-rsvp-highlight/90 text-foreground font-semibold gap-2"
+              className="bg-rsvp-highlight hover:bg-rsvp-highlight/90 text-primary-foreground font-semibold gap-2"
             >
               <Mail className="w-5 h-5" />
               {t("RSVP (invited guests only)", "RSVP (только для приглашённых гостей)")}
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              onClick={() => document.getElementById('travel')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground gap-2"
-            >
-              <MapPin className="w-5 h-5" />
-              {t("Travel & stay details", "Информация о поездке")}
             </Button>
           </div>
         </div>
