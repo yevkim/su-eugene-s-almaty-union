@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Mail, Mountain } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { MapPin, Mail, Mountain, Plane, FileText, Hotel, Map } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import heroImage from "@/assets/hero-mountain-venue.jpg";
+import heroImage from "@/assets/hero-hands.jpg";
 import storyBalloons from "@/assets/story-balloons.jpg";
 import storyBench from "@/assets/story-bench.jpg";
 import storyProposal from "@/assets/story-proposal.jpg";
@@ -22,17 +23,17 @@ const Index = () => {
       {/* Hero Section */}
       <section id="hero" className="relative h-screen flex items-center justify-center">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-hero-overlay/60 via-hero-overlay/40 to-hero-overlay/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/80" />
         </div>
         
-        <div className="relative z-10 text-center text-primary-foreground px-4">
-          <h1 className="font-serif text-6xl md:text-8xl font-bold mb-4 animate-in fade-in duration-1000">
+        <div className="relative z-10 text-center text-foreground px-4">
+          <h1 className="font-serif text-5xl md:text-8xl font-bold mb-4 animate-in fade-in duration-1000">
             {t("Su June & Eugene", "Су Джун и Евгений")}
           </h1>
-          <div className="space-y-2 text-lg md:text-xl mb-8 animate-in fade-in duration-1000 delay-200">
+          <div className="space-y-2 text-base md:text-xl mb-8 animate-in fade-in duration-1000 delay-200">
             <p>{t(
               "08.08.2026 · Sulusai, near Almaty, Kazakhstan",
               "08.08.2026 · Сулуса́й, недалеко от Алматы, Казахстан"
@@ -40,7 +41,7 @@ const Index = () => {
           </div>
           
           <div className="max-w-2xl mx-auto mb-8 animate-in fade-in duration-1000 delay-300">
-            <p className="text-lg md:text-xl font-light">
+            <p className="text-base md:text-xl font-light">
               {t(
                 "We're getting married in the mountains of Kazakhstan and would love for you to celebrate with us.",
                 "Мы женимся в горах Казахстана и очень хотим отпраздновать этот день вместе с вами."
@@ -229,338 +230,256 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Travel to Almaty Section */}
-      <section id="travel" className="section-padding bg-background">
+      {/* Collapsible Travel Info Sections */}
+      <section id="travel-info" className="section-padding bg-background">
         <div className="container-custom">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-            {t("Travel to Almaty", "Как добраться до Алматы")}
-          </h2>
-
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center">
-              <p className="text-lg text-foreground/80">
-                {t(
-                  "Almaty is the largest city in Kazakhstan, set right next to the mountains. It's easy to reach with a combination of regional and international flights.",
-                  "Алматы — крупнейший город Казахстана, который буквально упирается в горы. Добраться сюда можно с помощью удобных стыковочных и прямых рейсов."
-                )}
-              </p>
-            </div>
-
-            <Card>
-              <CardContent className="p-8 space-y-4">
-                <h3 className="font-serif text-2xl font-semibold text-primary">
-                  {t("Airport & Getting Around", "Аэропорт и трансфер")}
-                </h3>
-                <p className="text-foreground/70">
-                  {t(
-                    "You'll be flying into Almaty International Airport (ALA). From the airport, it's about 25–40 minutes by car to the city centre, depending on traffic, and longer to reach the mountain area where Sulusai is located.",
-                    "Вы прилетите в Международный аэропорт Алматы (ALA). От аэропорта до центра города примерно 25–40 минут на машине в зависимости от пробок, а до горного района, где находится Сулусай, дорога займёт больше времени."
-                  )}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 space-y-4">
-                <h3 className="font-serif text-xl font-semibold text-primary">
-                  {t("From Singapore & Southeast Asia", "Из Сингапура и Юго-Восточной Азии")}
-                </h3>
-                <p className="text-foreground/70 text-sm">
-                  {t(
-                    "From Singapore and nearby cities, the most convenient way is to fly with one or two connections via regional hubs. Depending on the route, the total travel time is usually around 10–13 hours, including transit. Airlines like AirAsia X and other regional carriers often appear among the options, but routes and schedules change over time.",
-                    "Из Сингапура и городов Юго‑Восточной Азии чаще всего удобно лететь с одной‑двумя стыковками через региональные хабы. В зависимости от маршрута дорога обычно занимает около 10–13 часов вместе с пересадками. Варианты перелётов часто включают авиакомпании вроде AirAsia X и другие региональные перевозчики, но расписание и маршруты со временем меняются."
-                  )}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 space-y-4">
-                <h3 className="font-serif text-xl font-semibold text-primary">
-                  {t("From Europe", "Из Европы")}
-                </h3>
-                <p className="text-foreground/70 text-sm">
-                  {t(
-                    "From major European cities, many guests will likely fly via hubs such as Istanbul, Dubai, Abu Dhabi, or Frankfurt. Typical total travel times are around 7–10 hours, depending on where you start and your connections.",
-                    "Из крупных городов Европы удобнее всего лететь через крупные хабы, например Стамбул, Дубай, Абу‑Даби или Франкфурт. Весь путь обычно занимает около 7–10 часов в зависимости от города вылета и выбранных стыковок."
-                  )}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 space-y-4">
-                <h3 className="font-serif text-xl font-semibold text-primary">
-                  {t("From the US & Other Long-Haul Destinations", "Из США и других дальних направлений")}
-                </h3>
-                <p className="text-foreground/70 text-sm">
-                  {t(
-                    "From the US and other long-haul destinations, expect at least two flights and a total travel time of 14–20 hours or more, depending on your route. Most itineraries will go via major European or Middle Eastern hubs.",
-                    "Из США и других дальних направлений, скорее всего, потребуется минимум два перелёта, а общая дорога может занять 14–20 часов и более, в зависимости от маршрута. Чаще всего перелёты проходят через крупные европейские или ближневосточные хабы."
-                  )}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-accent/10 border-accent/20">
-              <CardContent className="p-6">
-                <p className="text-foreground/70">
-                  <strong>{t("Transport to venue:", "Трансфер к месту свадьбы:")}</strong> {t(
-                    "Once you land in Almaty, you can use taxis, ride‑hailing apps, or pre‑arranged transfers to get to your accommodation. Closer to the wedding, we'll share more details about how to get from the city to Sulusai.",
-                    "По прилёте в Алматы можно воспользоваться такси, приложениями для вызова машины или заранее заказанным трансфером до вашего жилья. Ближе к свадьбе мы поделимся подробной информацией о том, как удобнее добраться из города до Сулусая."
-                  )}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Visa & Entry Section */}
-      <section id="visa" className="section-padding bg-section-alt">
-        <div className="container-custom">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-            {t("Visa & Entry Basics", "Визы и въезд")}
+            {t("Travel & Stay", "Путешествие и проживание")}
           </h2>
 
           <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardContent className="p-8 space-y-6">
-                <div className="p-4 bg-accent/20 rounded-lg border border-accent">
-                  <p className="text-foreground/80">
-                    {t(
-                      "Kazakhstan has a relatively friendly visa policy for many countries, and a large number of guests will be able to enter visa‑free for short stays. However, rules can change before August 2026, so please always check official sources before you travel.",
-                      "У Казахстана достаточно лояльный визовый режим для граждан многих стран, и большинство наших гостей смогут въехать без визы на короткий срок. Но правила могут измениться к августу 2026 года, поэтому, пожалуйста, обязательно проверяйте актуальную информацию на официальных сайтах перед поездкой."
-                    )}
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <p className="text-foreground/80">
-                    {t(
-                      "At the moment, citizens of countries such as Singapore, Malaysia, Vietnam, Germany, Italy, Australia, the United States, the Philippines and many others can usually enter Kazakhstan visa‑free for a limited number of days, as part of Kazakhstan's expanded visa‑free regime. The exact conditions (how many days, single or multiple entry, etc.) depend on your passport.",
-                      "На данный момент граждане таких стран, как Сингапур, Малайзия, Вьетнам, Германия, Италия, Австралия, США, Филиппины и ряда других государств, как правило, могут въезжать в Казахстан без визы на ограниченный срок в рамках расширенного безвизового режима. Точные условия (количество дней, однократный или многократный въезд и т.п.) зависят от вашего паспорта."
-                    )}
-                  </p>
-
-                  <p className="text-foreground/80">
-                    {t(
-                      "Because visa rules and registration requirements can change, please use the links below or contact the nearest Kazakh embassy or consulate to confirm what applies to you.",
-                      "Поскольку визовые правила и требования к регистрации могут меняться, пожалуйста, используйте ссылки ниже или свяжитесь с ближайшим посольством или консульством Казахстана, чтобы уточнить, какие правила действуют именно для вас."
-                    )}
-                  </p>
-                </div>
-
-                <div className="pt-4">
-                  <h3 className="font-semibold mb-3">{t("Helpful Resources:", "Полезные ресурсы:")}</h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• {t(
-                      "Official information on Kazakhstan's visa regime (Ministry of Foreign Affairs)",
-                      "Официальная информация о визовом режиме Казахстана (МИД)"
-                    )}</li>
-                    <li>• {t(
-                      "Travel advice and entry information from your country's foreign affairs ministry (e.g., Singapore MFA, U.S. State Department, etc.)",
-                      "Рекомендации и требования к въезду от МИДа вашей страны (например, МИД Сингапура, Госдепартамент США и др.)"
-                    )}</li>
-                    <li>• {t(
-                      "Online visa and entry requirements checkers provided by airlines or travel agencies",
-                      "Онлайн‑сервисы авиакомпаний и туристических сайтов для проверки визовых требований"
-                    )}</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Where to Stay Section */}
-      <section id="stay" className="section-padding bg-background">
-        <div className="container-custom">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-            {t("Where to Stay", "Где остановиться")}
-          </h2>
-
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center">
-              <p className="text-lg text-foreground/80">
-                {t(
-                  "There are many beautiful places to stay in and around Almaty, from cozy city apartments to mountain resorts.",
-                  "В Алматы и вокруг города есть много красивых вариантов размещения — от уютных квартир в центре до горных курортов."
-                )}
-              </p>
-            </div>
-
-            <Card>
-              <CardContent className="p-8">
-                <p className="text-foreground/80">
-                  {t(
-                    "We'll share specific recommendations for hotels and areas a bit closer to the date, once we have a better idea of where most guests prefer to stay.",
-                    "Конкретные рекомендации по отелям и районам мы отправим ближе к дате свадьбы, когда поймём, какие варианты больше всего подходят нашим гостям."
-                  )}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-primary/5">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <Mountain className="w-8 h-8 text-primary flex-shrink-0" />
-                  <div className="space-y-4">
-                    <h3 className="font-serif text-2xl font-semibold text-primary">
-                      Oi Qaragai (Lesnaya Skazka)
-                    </h3>
+            <Accordion type="single" collapsible className="space-y-4">
+              {/* Travel to Almaty */}
+              <AccordionItem value="travel" className="border rounded-lg bg-card px-6">
+                <AccordionTrigger className="hover:no-underline py-6">
+                  <div className="flex items-center gap-3 text-left">
+                    <Plane className="w-6 h-6 text-primary flex-shrink-0" />
+                    <span className="font-serif text-xl md:text-2xl font-semibold text-primary">
+                      {t("Travel to Almaty", "Как добраться до Алматы")}
+                    </span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <div className="space-y-6">
                     <p className="text-foreground/80">
                       {t(
-                        "If you like the idea of waking up in the mountains, you can also look at places like Oi Qaragai (Lesnaya Skazka) and similar mountain resorts near Almaty as inspiration for a short getaway before or after the wedding.",
-                        "Если вам нравится идея просыпаться в горах, можно присмотреться к местам вроде «Ой‑Карагай» (Лесная сказка) и другим горным курортам недалеко от Алматы — это отличный вариант для мини‑отпуска до или после свадьбы."
+                        "Almaty is the largest city in Kazakhstan, set right next to the mountains. It's easy to reach with a combination of regional and international flights.",
+                        "Алматы — крупнейший город Казахстана, который буквально упирается в горы. Добраться сюда можно с помощью удобных стыковочных и прямых рейсов."
                       )}
                     </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
-      {/* Itineraries Section */}
-      <section id="itineraries" className="section-padding bg-section-alt">
-        <div className="container-custom">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-            {t("Suggested Itineraries", "Предлагаемые маршруты")}
-          </h2>
+                    <div className="space-y-4">
+                      <div className="p-4 bg-muted/50 rounded-lg">
+                        <h4 className="font-semibold mb-2">{t("Airport & Getting Around", "Аэропорт и трансфер")}</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {t(
+                            "You'll be flying into Almaty International Airport (ALA). From the airport, it's about 25–40 minutes by car to the city centre.",
+                            "Вы прилетите в Международный аэропорт Алматы (ALA). От аэропорта до центра города примерно 25–40 минут на машине."
+                          )}
+                        </p>
+                      </div>
 
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center">
-              <p className="text-lg text-foreground/80">
-                {t(
-                  "Many guests will arrive on Thursday, get settled, celebrate with us on Saturday 8 August, and then stay longer to explore. Below are some light ideas for 3, 5, and 7 days in and around Almaty, with a focus on nature and a few city highlights.",
-                  "Многие гости прилетят в четверг, спокойно устроятся, отметят с нами свадьбу в субботу 8 августа, а потом останутся подольше, чтобы посмотреть окрестности. Ниже — лёгкие идеи на 3, 5 и 7 дней в Алматы и вокруг, с упором на природу и парой городских впечатлений."
-                )}
-              </p>
-            </div>
+                      <div className="p-4 bg-muted/50 rounded-lg">
+                        <h4 className="font-semibold mb-2">{t("From Singapore & Southeast Asia", "Из Сингапура и Юго-Восточной Азии")}</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {t(
+                            "One or two connections via regional hubs, total travel time around 10–13 hours including transit.",
+                            "Одна‑две стыковки через региональные хабы, общее время в пути около 10–13 часов."
+                          )}
+                        </p>
+                      </div>
 
-            <div className="bg-muted/30 rounded-lg p-6 text-center">
-              <p className="text-foreground/80">
-                {t(
-                  "These are not fixed tours, just suggestions to help you imagine your trip. You can mix and match or join small group tours with local guides.",
-                  "Это не готовые туры, а лишь идеи, которые помогут представить свою поездку. Можно комбинировать дни по‑своему или присоединиться к небольшим групповым турам с местными гидами."
-                )}
-              </p>
-            </div>
+                      <div className="p-4 bg-muted/50 rounded-lg">
+                        <h4 className="font-semibold mb-2">{t("From Europe", "Из Европы")}</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {t(
+                            "Via hubs such as Istanbul, Dubai, or Frankfurt. Total travel time around 7–10 hours.",
+                            "Через хабы — Стамбул, Дубай или Франкфурт. Весь путь около 7–10 часов."
+                          )}
+                        </p>
+                      </div>
 
-            {/* 5-Day Itinerary */}
-            <Card>
-              <CardContent className="p-8">
-                <h3 className="font-serif text-2xl font-semibold mb-6 text-primary">
-                  {t("5-Day Extended Trip", "5-дневная расширенная поездка")}
-                </h3>
-                <div className="space-y-5">
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Day 1 – Thursday", "День 1 – четверг")}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {t(
-                        "Arrive in Almaty, check in, and take it easy. Go for a gentle walk in the city centre, grab coffee or dinner, and get used to the time difference and climate.",
-                        "Прилет в Алматы, заселение и спокойный день. Можно прогуляться по центру, выпить кофе или поужинать в городе и привыкнуть к новому часовому поясу и климату."
-                      )}
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Day 2 – Friday", "День 2 – пятница")}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {t(
-                        "Explore Almaty city and the foothills at a relaxed pace. You might ride the cable car up Kok Tobe hill, walk through parks and the Green Bazaar, or visit a viewpoint to see the city against the mountains.",
-                        "Неспешно знакомимся с Алматы и предгорьями. Можно подняться на холм Кок‑Тобе по канатной дороге, погулять по паркам и Зелёному базару или выйти на смотровую площадку с видом на город и горы."
-                      )}
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Day 3 – Saturday", "День 3 – суббота")}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {t(
-                        "Wedding day! Keep the day free for getting ready, transfers, and celebrating with us in Sulusai from day to night.",
-                        "День свадьбы! Оставьте его полностью свободным для сборов, дороги до площадки и праздника с нами в Сулусае с утра до позднего вечера."
-                      )}
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Day 4 – Sunday", "День 4 – воскресенье")}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {t(
-                        "Take a day trip to one of the nearby lakes, such as Big Almaty Lake or Lake Issyk with Turgen Gorge. Expect stunning views, fresh air, and plenty of photo stops.",
-                        "Съездите на однодневную экскурсию к одному из близлежащих озёр, например к Большому Алматинскому озеру или к озеру Иссык с Тургенским ущельем. Вас ждут захватывающие виды, свежий воздух и множество мест для фотографий."
-                      )}
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Day 5 – Monday", "День 5 – понедельник")}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {t(
-                        "Use this as a flexible day in the city: brunch, museums, parks, last-minute shopping, and a relaxed dinner before your flight out or next adventure.",
-                        "Гибкий день в городе: бранч, музеи, парки, покупки и неспешный ужин перед вылетом или продолжением путешествия."
-                      )}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                      <div className="p-4 bg-muted/50 rounded-lg">
+                        <h4 className="font-semibold mb-2">{t("From the US & Long-Haul", "Из США и дальних направлений")}</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {t(
+                            "Expect at least two flights and 14–20 hours total travel time via European or Middle Eastern hubs.",
+                            "Минимум два перелёта, 14–20 часов через европейские или ближневосточные хабы."
+                          )}
+                        </p>
+                      </div>
+                    </div>
 
-            {/* 7-Day Itinerary */}
-            <Card>
-              <CardContent className="p-8">
-                <h3 className="font-serif text-2xl font-semibold mb-6 text-primary">
-                  {t("7-Day Full Experience", "7-дневный полный опыт")}
-                </h3>
-                <div className="space-y-5">
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Day 1 – Thursday", "День 1 – четверг")}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {t("Arrival and soft landing in Almaty.", "Прилёт и мягкое знакомство с городом.")}
-                    </p>
+                    <div className="p-4 bg-accent/20 rounded-lg border border-accent/30">
+                      <p className="text-sm text-foreground/70">
+                        <strong>{t("Transport to venue:", "Трансфер к месту свадьбы:")}</strong> {t(
+                          "Closer to the wedding, we'll share details about how to get from the city to Sulusai.",
+                          "Ближе к свадьбе мы поделимся информацией о том, как добраться из города до Сулусая."
+                        )}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Day 2 – Friday", "День 2 – пятница")}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {t("City + Kok Tobe, cafés, markets.", "Город, Кок‑Тобе, кафе и рынки.")}
-                    </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Visa & Entry */}
+              <AccordionItem value="visa" className="border rounded-lg bg-card px-6">
+                <AccordionTrigger className="hover:no-underline py-6">
+                  <div className="flex items-center gap-3 text-left">
+                    <FileText className="w-6 h-6 text-primary flex-shrink-0" />
+                    <span className="font-serif text-xl md:text-2xl font-semibold text-primary">
+                      {t("Visa & Entry Basics", "Визы и въезд")}
+                    </span>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Day 3 – Saturday", "День 3 – суббота")}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {t("Wedding day.", "День свадьбы.")}
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Days 4–5 – Nature escape", "Дни 4–5 – выезд на природу")}</h4>
-                    <p className="text-sm text-muted-foreground">
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <div className="space-y-6">
+                    <div className="p-4 bg-accent/20 rounded-lg border border-accent">
+                      <p className="text-foreground/80">
+                        {t(
+                          "Kazakhstan has a friendly visa policy for many countries. However, rules can change before August 2026, so please always check official sources before you travel.",
+                          "У Казахстана лояльный визовый режим для многих стран. Но правила могут измениться к августу 2026 года, поэтому проверяйте актуальную информацию перед поездкой."
+                        )}
+                      </p>
+                    </div>
+
+                    <p className="text-foreground/80">
                       {t(
-                        "Use two days to join a small-group or private trip to Charyn Canyon and the mountain lakes (Kolsai, Kaindy) or another multi‑day nature tour. These areas are famous for dramatic canyons, forests, and turquoise lakes.",
-                        "Выделите два дня на групповую или индивидуальную поездку в Чарынский каньон и к горным озёрам (Кольсай, Каинды) или на другой многодневный маршрут. Эти места известны своими впечатляющими каньонами, лесами и бирюзовыми озёрами."
+                        "Citizens of Singapore, Malaysia, Germany, Italy, Australia, the United States, and many others can usually enter Kazakhstan visa‑free for a limited number of days.",
+                        "Граждане Сингапура, Малайзии, Германии, Италии, Австралии, США и ряда других государств обычно могут въезжать в Казахстан без визы на ограниченный срок."
                       )}
                     </p>
+
+                    <div className="pt-2">
+                      <h4 className="font-semibold mb-3">{t("Helpful Resources:", "Полезные ресурсы:")}</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li>• {t("Official information on Kazakhstan's visa regime (Ministry of Foreign Affairs)", "Официальная информация о визовом режиме Казахстана (МИД)")}</li>
+                        <li>• {t("Travel advice from your country's foreign affairs ministry", "Рекомендации от МИДа вашей страны")}</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Day 6 – Monday", "День 6 – понедельник")}</h4>
-                    <p className="text-sm text-muted-foreground">
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Where to Stay */}
+              <AccordionItem value="stay" className="border rounded-lg bg-card px-6">
+                <AccordionTrigger className="hover:no-underline py-6">
+                  <div className="flex items-center gap-3 text-left">
+                    <Hotel className="w-6 h-6 text-primary flex-shrink-0" />
+                    <span className="font-serif text-xl md:text-2xl font-semibold text-primary">
+                      {t("Where to Stay", "Где остановиться")}
+                    </span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <div className="space-y-6">
+                    <p className="text-foreground/80">
                       {t(
-                        "Come back to Almaty and have a slow city day: spa, coffee, parks, or a short walk in the foothills.",
-                        "Возвращаемся в Алматы и устраиваем медленный городской день: спа, кофе, парки или короткая прогулка в предгорьях."
+                        "There are many beautiful places to stay in and around Almaty, from cozy city apartments to mountain resorts.",
+                        "В Алматы и вокруг города есть много красивых вариантов размещения — от уютных квартир в центре до горных курортов."
                       )}
                     </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">{t("Day 7 – Tuesday", "День 7 – вторник")}</h4>
-                    <p className="text-sm text-muted-foreground">
+
+                    <p className="text-foreground/80">
                       {t(
-                        "Keep your last day open for souvenir shopping, one last viewpoint, and your flight home.",
-                        "Оставьте последний день для сувениров, ещё одного красивого вида на горы и вылета домой."
+                        "We'll share specific recommendations for hotels and areas a bit closer to the date.",
+                        "Конкретные рекомендации по отелям и районам мы отправим ближе к дате свадьбы."
                       )}
                     </p>
+
+                    <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
+                      <div className="flex items-start gap-3">
+                        <Mountain className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-2">Oi Qaragai (Lesnaya Skazka)</h4>
+                          <p className="text-sm text-muted-foreground">
+                            {t(
+                              "If you like the idea of waking up in the mountains, places like Oi Qaragai are great for a short getaway before or after the wedding.",
+                              "Если вам нравится идея просыпаться в горах, «Ой‑Карагай» — отличный вариант для мини‑отпуска до или после свадьбы."
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Suggested Itineraries */}
+              <AccordionItem value="itineraries" className="border rounded-lg bg-card px-6">
+                <AccordionTrigger className="hover:no-underline py-6">
+                  <div className="flex items-center gap-3 text-left">
+                    <Map className="w-6 h-6 text-primary flex-shrink-0" />
+                    <span className="font-serif text-xl md:text-2xl font-semibold text-primary">
+                      {t("Suggested Itineraries", "Предлагаемые маршруты")}
+                    </span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6">
+                  <div className="space-y-6">
+                    <p className="text-foreground/80">
+                      {t(
+                        "Many guests will arrive on Thursday, celebrate with us on Saturday 8 August, and then stay longer to explore.",
+                        "Многие гости прилетят в четверг, отметят с нами свадьбу в субботу 8 августа, а потом останутся подольше."
+                      )}
+                    </p>
+
+                    <div className="p-4 bg-muted/30 rounded-lg">
+                      <p className="text-sm text-foreground/80">
+                        {t(
+                          "These are not fixed tours, just suggestions. You can mix and match or join small group tours with local guides.",
+                          "Это не готовые туры, а лишь идеи. Можно комбинировать или присоединиться к турам с местными гидами."
+                        )}
+                      </p>
+                    </div>
+
+                    {/* 5-Day Itinerary */}
+                    <div className="space-y-4">
+                      <h4 className="font-serif text-lg font-semibold text-primary">
+                        {t("5-Day Extended Trip", "5-дневная поездка")}
+                      </h4>
+                      <div className="space-y-3 text-sm">
+                        <div className="flex gap-3">
+                          <span className="font-semibold text-primary min-w-[80px]">{t("Day 1", "День 1")}</span>
+                          <span className="text-muted-foreground">{t("Arrive, check in, gentle walk", "Прилёт, заселение, прогулка")}</span>
+                        </div>
+                        <div className="flex gap-3">
+                          <span className="font-semibold text-primary min-w-[80px]">{t("Day 2", "День 2")}</span>
+                          <span className="text-muted-foreground">{t("Explore city, Kok Tobe, markets", "Город, Кок‑Тобе, рынки")}</span>
+                        </div>
+                        <div className="flex gap-3">
+                          <span className="font-semibold text-primary min-w-[80px]">{t("Day 3", "День 3")}</span>
+                          <span className="text-muted-foreground">{t("Wedding day!", "День свадьбы!")}</span>
+                        </div>
+                        <div className="flex gap-3">
+                          <span className="font-semibold text-primary min-w-[80px]">{t("Day 4", "День 4")}</span>
+                          <span className="text-muted-foreground">{t("Day trip to lakes (Big Almaty or Issyk)", "Озёра (Большое Алматинское или Иссык)")}</span>
+                        </div>
+                        <div className="flex gap-3">
+                          <span className="font-semibold text-primary min-w-[80px]">{t("Day 5", "День 5")}</span>
+                          <span className="text-muted-foreground">{t("Relax, last sights, departure", "Отдых, покупки, вылет")}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 7-Day Itinerary */}
+                    <div className="space-y-4">
+                      <h4 className="font-serif text-lg font-semibold text-primary">
+                        {t("7-Day Full Experience", "7-дневный полный опыт")}
+                      </h4>
+                      <div className="space-y-3 text-sm">
+                        <div className="flex gap-3">
+                          <span className="font-semibold text-primary min-w-[80px]">{t("Days 1–2", "Дни 1–2")}</span>
+                          <span className="text-muted-foreground">{t("Arrival + city exploration", "Прилёт + город")}</span>
+                        </div>
+                        <div className="flex gap-3">
+                          <span className="font-semibold text-primary min-w-[80px]">{t("Day 3", "День 3")}</span>
+                          <span className="text-muted-foreground">{t("Wedding day", "День свадьбы")}</span>
+                        </div>
+                        <div className="flex gap-3">
+                          <span className="font-semibold text-primary min-w-[80px]">{t("Days 4–5", "Дни 4–5")}</span>
+                          <span className="text-muted-foreground">{t("Charyn Canyon + Kolsai/Kaindy lakes", "Чарынский каньон + Кольсай/Каинды")}</span>
+                        </div>
+                        <div className="flex gap-3">
+                          <span className="font-semibold text-primary min-w-[80px]">{t("Days 6–7", "Дни 6–7")}</span>
+                          <span className="text-muted-foreground">{t("Slow city day + departure", "Спа, кофе, вылет")}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
@@ -570,7 +489,7 @@ const Index = () => {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <Card className="border-2 border-rsvp-highlight shadow-lg">
-              <CardContent className="p-10">
+              <CardContent className="p-8 md:p-10">
                 <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-primary">
                   RSVP
                 </h2>
@@ -643,7 +562,7 @@ const Index = () => {
 
           <div className="max-w-4xl mx-auto space-y-8">
             <Card>
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <h3 className="font-serif text-2xl font-semibold mb-6 text-primary">
                   {t("Frequently Asked Questions", "Часто задаваемые вопросы")}
                 </h3>
@@ -653,8 +572,8 @@ const Index = () => {
                     <h4 className="font-semibold mb-2">{t("What will the weather be like?", "Какая погода будет?")}</h4>
                     <p className="text-sm text-muted-foreground">
                       {t(
-                        "Early August in Almaty is usually warm in the city and cooler in the mountains, especially in the evenings. We recommend checking the forecast closer to the date and bringing a light layer for nights outdoors.",
-                        "В начале августа в городе обычно тепло, а в горах заметно прохладнее, особенно вечером. Рекомендуем проверить прогноз ближе к дате и взять с собой лёгкую тёплую одежду для вечерних прогулок."
+                        "Early August in Almaty is usually warm in the city and cooler in the mountains, especially in the evenings. Bring a light layer for nights outdoors.",
+                        "В начале августа в городе обычно тепло, а в горах прохладнее, особенно вечером. Возьмите лёгкую тёплую одежду."
                       )}
                     </p>
                   </div>
@@ -663,28 +582,28 @@ const Index = () => {
                     <h4 className="font-semibold mb-2">{t("Can I arrive earlier or stay longer?", "Могу ли я приехать раньше или остаться дольше?")}</h4>
                     <p className="text-sm text-muted-foreground">
                       {t(
-                        "Yes, of course! Many guests plan to arrive on Thursday or Friday and stay a few extra days to explore. Our suggested itineraries above can give you ideas, and you can also book additional tours with local operators.",
-                        "Да, конечно! Многие гости планируют прилететь в четверг или пятницу и остаться ещё на несколько дней. Идеи в разделе с маршрутами могут помочь спланировать поездку, а при желании можно присоединиться к дополнительным турам у местных организаторов."
+                        "Yes! Many guests plan to arrive on Thursday or Friday and stay a few extra days to explore.",
+                        "Да! Многие гости планируют прилететь в четверг или пятницу и остаться на несколько дней."
                       )}
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2">{t("What about food and dietary restrictions?", "Что насчет еды и диетических ограничений?")}</h4>
+                    <h4 className="font-semibold mb-2">{t("What about food and dietary restrictions?", "Что насчет еды?")}</h4>
                     <p className="text-sm text-muted-foreground">
                       {t(
-                        "Kazakh cuisine includes a lot of meat, but there will also be options for guests who prefer lighter meals. Please let us know about any dietary restrictions in your RSVP form so we can do our best to accommodate them.",
-                        "В казахской кухне много мясных блюд, но на празднике будут и более лёгкие варианты. Пожалуйста, укажите все пищевые ограничения в форме RSVP, чтобы мы могли постараться учесть ваши пожелания."
+                        "Please let us know about any dietary restrictions in your RSVP form so we can accommodate them.",
+                        "Укажите все пищевые ограничения в форме RSVP, чтобы мы могли учесть ваши пожелания."
                       )}
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2">{t("How will we get to the wedding venue?", "Как мы доберёмся до места свадьбы?")}</h4>
+                    <h4 className="font-semibold mb-2">{t("How will we get to the venue?", "Как доберёмся до места?")}</h4>
                     <p className="text-sm text-muted-foreground">
                       {t(
-                        "Closer to the date, we'll share details about transport options between Almaty city and Sulusai, including any arranged transfers or recommended routes by taxi.",
-                        "Ближе к дате свадьбы мы поделимся подробной информацией о вариантах поездки из Алматы до Сулусая, включая возможные организованные трансферы и рекомендованные маршруты на такси."
+                        "Closer to the date, we'll share details about transport between Almaty city and Sulusai.",
+                        "Ближе к дате мы поделимся информацией о транспорте из Алматы до Сулусая."
                       )}
                     </p>
                   </div>
@@ -693,7 +612,7 @@ const Index = () => {
             </Card>
 
             <Card>
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <h3 className="font-serif text-2xl font-semibold mb-6 text-primary">
                   {t("Get in Touch", "Связаться с нами")}
                 </h3>
@@ -721,12 +640,12 @@ const Index = () => {
       </section>
 
       {/* Footer Image */}
-      <section className="py-16 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container-custom flex justify-center">
           <img 
             src={footerHands} 
             alt={t("Hands with engagement ring", "Руки с обручальным кольцом")}
-            className="rounded-lg shadow-lg max-w-md w-full h-auto"
+            className="rounded-lg shadow-lg max-w-sm md:max-w-md w-full h-auto"
           />
         </div>
       </section>
