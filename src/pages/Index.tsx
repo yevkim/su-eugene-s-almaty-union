@@ -5,10 +5,7 @@ import { MapPin, Mail, Mountain, Plane, FileText, Hotel, Map } from "lucide-reac
 import { useLanguage } from "@/hooks/useLanguage";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import heroImage from "@/assets/hero-hands.jpg";
-import storyBalloons from "@/assets/story-balloons.jpg";
-import storyBench from "@/assets/story-bench.jpg";
 import storyProposal from "@/assets/story-proposal.jpg";
-import footerHands from "@/assets/footer-hands.jpg";
 
 const Index = () => {
   const { t } = useLanguage();
@@ -87,83 +84,12 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-12">
-            {/* Milestone 1 - Balloons */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="order-2 md:order-1">
-                <img 
-                  src={storyBalloons} 
-                  alt={t("Su June and Eugene at colorful light installation", "Су Джун и Евгений у красочной световой инсталляции")}
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
-              </div>
-              <div className="order-1 md:order-2 space-y-3">
-                <h3 className="font-serif text-2xl font-semibold text-primary">
-                  {t("We crossed paths in Singapore", "Мы встретились в Сингапуре")}
-                </h3>
-                <p className="text-muted-foreground">
-                  {t(
-                    "We met in Singapore, both far away from where we grew up, and immediately bonded over food, stories about our families, and life between cultures.",
-                    "Мы познакомились в Сингапуре, далеко от мест, где выросли, и сразу нашли общий язык: через еду, рассказы о семьях и жизнь между разными культурами."
-                  )}
-                </p>
-              </div>
-            </div>
-
-            {/* Milestone 2 - Bench */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-3">
-                <h3 className="font-serif text-2xl font-semibold text-primary">
-                  {t("Many flights, one team", "Множество перелётов, одна команда")}
-                </h3>
-                <p className="text-muted-foreground">
-                  {t(
-                    "Between work trips, family visits, and holidays, we collected a lot of boarding passes and even more inside jokes. Somewhere between airports, we quietly became a team.",
-                    "Рабочие командировки, поездки к родным и совместные отпуска подарили нам целую коллекцию посадочных талонов и ещё больше внутренних шуток. Где‑то между аэропортами мы очень незаметно стали настоящей командой."
-                  )}
-                </p>
-              </div>
-              <div>
-                <img 
-                  src={storyBench} 
-                  alt={t("Su June and Eugene on a bench in nature", "Су Джун и Евгений на скамейке на природе")}
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
-              </div>
-            </div>
-
-            {/* Milestone 3 - Proposal */}
-            <div className="text-center max-w-2xl mx-auto space-y-4">
-              <h3 className="font-serif text-2xl font-semibold text-primary">
-                {t("The proposal", "Предложение")}
-              </h3>
-              <p className="text-muted-foreground">
-                {t(
-                  "Surrounded by beautiful views and way too many photos, Eugene asked, Su June said yes, and both of us cried more than expected.",
-                  "В окружении красивых видов и бесконечного количества фотографий Евгений сделал предложение, Су Джун сказала «да», и оба вдруг расплакались куда сильнее, чем планировали."
-                )}
-              </p>
-              <div className="mt-6">
-                <img 
-                  src={storyProposal} 
-                  alt={t("The proposal at Jewel Changi Airport", "Предложение в Jewel Changi Airport")}
-                  className="rounded-lg shadow-lg w-full h-auto max-w-lg mx-auto"
-                />
-              </div>
-            </div>
-
-            {/* Milestone 4 */}
-            <div className="text-center max-w-2xl mx-auto space-y-4">
-              <h3 className="font-serif text-2xl font-semibold text-primary">
-                {t("Now it's wedding time", "Теперь время свадьбы")}
-              </h3>
-              <p className="text-muted-foreground">
-                {t(
-                  "Next stop: the mountains near Almaty, to bring together our families and friends from all over the world and start the next chapter.",
-                  "Следующая остановка — горы под Алматы, где мы соберём родных и друзей со всего мира и начнём новую главу нашей истории."
-                )}
-              </p>
-            </div>
+          <div className="max-w-lg mx-auto">
+            <img 
+              src={storyProposal} 
+              alt={t("The proposal at Jewel Changi Airport", "Предложение в Jewel Changi Airport")}
+              className="rounded-lg shadow-lg w-full h-auto"
+            />
           </div>
         </div>
       </section>
@@ -636,17 +562,6 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
-
-      {/* Footer Image */}
-      <section className="py-12 md:py-16 bg-background">
-        <div className="container-custom flex justify-center">
-          <img 
-            src={footerHands} 
-            alt={t("Hands with engagement ring", "Руки с обручальным кольцом")}
-            className="rounded-lg shadow-lg max-w-sm md:max-w-md w-full h-auto"
-          />
         </div>
       </section>
 
