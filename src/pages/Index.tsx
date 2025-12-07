@@ -28,7 +28,7 @@ const Index = () => {
         
         <div className="relative z-10 text-center text-foreground px-4">
           <h1 className="font-serif text-5xl md:text-8xl font-bold mb-4 animate-in fade-in duration-1000">
-            {t("June and Eugene", "Джун и Евгений")}
+            {t("June & Eugene", "Джун и Евгений")}
           </h1>
           <div className="space-y-2 text-base md:text-xl mb-8 animate-in fade-in duration-1000 delay-200">
             <p>{t(
