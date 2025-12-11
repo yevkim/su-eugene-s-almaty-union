@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { MapPin, Mail, Mountain, Plane, FileText, Hotel, Map } from "lucide-react";
+import { MapPin, Mail, Mountain, Plane, FileText, Hotel } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import heroImage from "@/assets/hero-hands.jpg";
 import storyProposal from "@/assets/story-proposal.jpg";
 
@@ -62,93 +63,106 @@ const Index = () => {
       {/* Our Story Section */}
       <section id="story" className="section-padding bg-background">
         <div className="container-custom">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-            {t("Our Story", "Наша история")}
-          </h2>
+          <ScrollReveal>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
+              {t("Our Story", "Наша история")}
+            </h2>
+          </ScrollReveal>
 
-          <div className="max-w-3xl mx-auto mb-16 text-center">
-            <p className="text-lg text-foreground/80">
-              {t(
-                "We actually met upside down in a yoga class — literally. One chat after class turned into a lunch, then into many more dates, and everything else unfolded naturally from there. The rest of the story… we will save for the wedding.",
-                "Мы встретились вверх ногами — в прямом смысле, на классе йоги. Один разговор после тренировки превратился в обед, потом в свидания… а дальше всё сложилось само собой. Полную историю расскажем уже на свадьбе."
-              )}
-            </p>
-          </div>
+          <ScrollReveal delay={100}>
+            <div className="max-w-3xl mx-auto mb-16 text-center">
+              <p className="text-lg text-foreground/80">
+                {t(
+                  "We actually met upside down in a yoga class — literally. One chat after class turned into a lunch, then into many more dates, and everything else unfolded naturally from there. The rest of the story… we will save for the wedding.",
+                  "Мы встретились вверх ногами — в прямом смысле, на классе йоги. Один разговор после тренировки превратился в обед, потом в свидания… а дальше всё сложилось само собой. Полную историю расскажем уже на свадьбе."
+                )}
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="max-w-lg mx-auto">
-            <img
-              src={storyProposal}
-              alt={t("The proposal at Jewel Changi Airport", "Предложение в Jewel Changi Airport")}
-              className="rounded-lg shadow-lg w-full h-auto"
-            />
-          </div>
+          <ScrollReveal animation="reveal-scale" delay={200}>
+            <div className="max-w-lg mx-auto">
+              <img
+                src={storyProposal}
+                alt={t("The proposal at Jewel Changi Airport", "Предложение в Jewel Changi Airport")}
+                className="rounded-lg shadow-lg w-full h-auto"
+              />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Wedding Day Section */}
       <section id="wedding-day" className="section-padding bg-section-alt">
         <div className="container-custom">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-            {t("Wedding Day", "Программа дня")}
-          </h2>
+          <ScrollReveal>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
+              {t("Wedding Day", "Программа дня")}
+            </h2>
+          </ScrollReveal>
 
-          <div className="max-w-4xl mx-auto">
-            <Card className="mb-8">
-              <CardContent className="p-8 space-y-6">
-                <div className="text-center space-y-4">
-                  <p className="text-2xl font-serif text-primary">
-                    {t("8 August 2026", "8 августа 2026")}
-                  </p>
-                  <p className="text-xl">
-                    Suly Sai Resort & SPA
-                    <br />
-                    <span className="text-base text-muted-foreground">
-                      {t("Near Almaty, Kazakhstan", "В предгорьях Алматы")}
-                    </span>
-                  </p>
-                </div>
+          <ScrollReveal delay={150}>
+            <div className="max-w-4xl mx-auto">
+              <Card className="mb-8">
+                <CardContent className="p-8 space-y-6">
+                  <div className="text-center space-y-4">
+                    <p className="text-2xl font-serif text-primary">
+                      {t("8 August 2026", "8 августа 2026")}
+                    </p>
+                    <p className="text-xl">
+                      Suly Sai Resort & SPA
+                      <br />
+                      <span className="text-base text-muted-foreground">
+                        {t("Near Almaty, Kazakhstan", "В предгорьях Алматы")}
+                      </span>
+                    </p>
+                  </div>
 
-                <div className="space-y-4">
-                  <p className="text-foreground/80">
-                    {t(
-                      "Our wedding will take place at Suly Sai, a beautiful spot in the mountains just outside Almaty. It will be an outdoor + indoor celebration, surrounded by nature and fresh air.",
-                      "Свадьба пройдёт в Suly Sai. Это красивое место в горах прямо над городом. Праздник будет и на открытом воздухе, и внутри — в окружении природы и свежести."
-                    )}
-                  </p>
+                  <div className="space-y-4">
+                    <p className="text-foreground/80">
+                      {t(
+                        "Our wedding will take place at Suly Sai, a beautiful spot in the mountains just outside Almaty. It will be an outdoor + indoor celebration, surrounded by nature and fresh air.",
+                        "Свадьба пройдёт в Suly Sai. Это красивое место в горах прямо над городом. Праздник будет и на открытом воздухе, и внутри — в окружении природы и свежести."
+                      )}
+                    </p>
 
-                  <p className="text-foreground/70">
-                    {t(
-                      "More details on timing and the full program will be shared closer to the date.",
-                      "Подробное расписание и программу дня отправим ближе к дате."
-                    )}
-                  </p>
-                </div>
+                    <p className="text-foreground/70">
+                      {t(
+                        "More details on timing and the full program will be shared closer to the date.",
+                        "Подробное расписание и программу дня отправим ближе к дате."
+                      )}
+                    </p>
+                  </div>
 
-                <div className="text-center pt-4">
-                  <Button
-                    variant="outline"
-                    className="gap-2"
-                    onClick={() => window.open('https://maps.app.goo.gl/QYGnUd4ifX9FKcP9A', '_blank')}
-                  >
-                    <MapPin className="w-4 h-4" />
-                    {t("View on map", "Посмотреть на карте")}
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                  <div className="text-center pt-4">
+                    <Button
+                      variant="outline"
+                      className="gap-2"
+                      onClick={() => window.open('https://maps.app.goo.gl/QYGnUd4ifX9FKcP9A', '_blank')}
+                    >
+                      <MapPin className="w-4 h-4" />
+                      {t("View on map", "Посмотреть на карте")}
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Collapsible Travel Info Sections */}
       <section id="travel-info" className="section-padding bg-background">
         <div className="container-custom">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-            {t("Travel & Stay", "Путешествие и проживание")}
-          </h2>
+          <ScrollReveal>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
+              {t("Travel & Stay", "Путешествие и проживание")}
+            </h2>
+          </ScrollReveal>
 
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
+          <ScrollReveal delay={100}>
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
               {/* Travel to Almaty */}
               <AccordionItem value="travel" className="border rounded-lg bg-card px-6">
                 <AccordionTrigger className="hover:no-underline py-6">
@@ -396,76 +410,79 @@ const Index = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* RSVP Section - Highlighted */}
       <section id="rsvp" className="section-padding bg-rsvp-highlight/30">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <Card className="border-2 border-rsvp-highlight shadow-lg">
-              <CardContent className="p-8 md:p-10">
-                <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-primary">
-                  RSVP
-                </h2>
+          <ScrollReveal animation="reveal-scale">
+            <div className="max-w-3xl mx-auto">
+              <Card className="border-2 border-rsvp-highlight shadow-lg">
+                <CardContent className="p-8 md:p-10">
+                  <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-primary">
+                    RSVP
+                  </h2>
 
-                <div className="space-y-6 mb-8">
-                  <div className="text-center">
-                    <p className="text-lg text-foreground/80">
-                      {t(
-                        "If you have received an invitation from us, we would be very happy if you could let us know whether you can join.",
-                        "Если вы получили от нас приглашение, нам будет очень приятно, если вы сообщите, сможете ли приехать."
-                      )}
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-accent/30 rounded-lg border border-accent/50 space-y-4">
-                    <p className="font-semibold text-center">{t("Important:", "Важно:")}</p>
-                    <div className="space-y-3 text-sm">
-                      <p className="text-foreground/80">
+                  <div className="space-y-6 mb-8">
+                    <div className="text-center">
+                      <p className="text-lg text-foreground/80">
                         {t(
-                          "To help us plan the day and the seating carefully, please note:",
-                          "Чтобы всем было комфортно, обратите внимание:"
-                        )}
-                      </p>
-                      <ul className="space-y-2 text-foreground/70">
-                        <li>• {t(
-                          "Only invited guests should fill in the RSVP form.",
-                          "Заполнять форму RSVP должны только гости, которые получили персональное приглашение."
-                        )}</li>
-                        <li>• {t(
-                          "Please do not bring additional plus‑ones unless they are clearly included in your invitation.",
-                          "К сожалению, мы не сможем принять гостей +1, если они не указаны в приглашении."
-                        )}</li>
-                        <li>• {t(
-                          "Please do not bring children unless they are specifically invited.",
-                          "Мы также очень просим вас воздержаться от визита с детьми, если они не приглашены отдельно."
-                        )}</li>
-                      </ul>
-                      <p className="text-foreground/70 pt-2">
-                        {t(
-                          "Thank you for understanding and helping us keep the celebration personal and comfortable for everyone.",
-                          "Спасибо за понимание и за то, что помогаете нам сделать праздник личным и комфортным для всех гостей."
+                          "If you have received an invitation from us, we would be very happy if you could let us know whether you can join.",
+                          "Если вы получили от нас приглашение, нам будет очень приятно, если вы сообщите, сможете ли приехать."
                         )}
                       </p>
                     </div>
-                  </div>
-                </div>
 
-                <div className="text-center">
-                  <Button
-                    size="lg"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-12 gap-2"
-                    onClick={() => window.open('https://notion.so/your-rsvp-form', '_blank')}
-                  >
-                    <Mail className="w-5 h-5" />
-                    {t("RSVP now", "Заполнить RSVP")}
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                    <div className="p-6 bg-accent/30 rounded-lg border border-accent/50 space-y-4">
+                      <p className="font-semibold text-center">{t("Important:", "Важно:")}</p>
+                      <div className="space-y-3 text-sm">
+                        <p className="text-foreground/80">
+                          {t(
+                            "To help us plan the day and the seating carefully, please note:",
+                            "Чтобы всем было комфортно, обратите внимание:"
+                          )}
+                        </p>
+                        <ul className="space-y-2 text-foreground/70">
+                          <li>• {t(
+                            "Only invited guests should fill in the RSVP form.",
+                            "Заполнять форму RSVP должны только гости, которые получили персональное приглашение."
+                          )}</li>
+                          <li>• {t(
+                            "Please do not bring additional plus‑ones unless they are clearly included in your invitation.",
+                            "К сожалению, мы не сможем принять гостей +1, если они не указаны в приглашении."
+                          )}</li>
+                          <li>• {t(
+                            "Please do not bring children unless they are specifically invited.",
+                            "Мы также очень просим вас воздержаться от визита с детьми, если они не приглашены отдельно."
+                          )}</li>
+                        </ul>
+                        <p className="text-foreground/70 pt-2">
+                          {t(
+                            "Thank you for understanding and helping us keep the celebration personal and comfortable for everyone.",
+                            "Спасибо за понимание и за то, что помогаете нам сделать праздник личным и комфортным для всех гостей."
+                          )}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="text-center">
+                    <Button
+                      size="lg"
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-12 gap-2"
+                      onClick={() => window.open('https://notion.so/your-rsvp-form', '_blank')}
+                    >
+                      <Mail className="w-5 h-5" />
+                      {t("RSVP now", "Заполнить RSVP")}
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
