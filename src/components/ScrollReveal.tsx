@@ -22,7 +22,7 @@ export function ScrollReveal({
       ref={ref}
       className={cn(
         "opacity-0",
-        isVisible && `animate-${animation}`,
+        isVisible && (animation === "reveal-scale" ? "animate-reveal-scale" : "animate-reveal-up"),
         className
       )}
       style={{ animationDelay: `${delay}ms` }}
