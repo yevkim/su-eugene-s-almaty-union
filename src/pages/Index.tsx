@@ -161,7 +161,7 @@ const Index = () => {
         <div className="container-custom">
           <ScrollReveal>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-              {t("Travel & Stay", "Путешествие и проживание")}
+              {t("✈️ Travel & Stay 🏨", "✈️ Путешествие и проживание 🏨")}
             </h2>
           </ScrollReveal>
 
@@ -428,7 +428,7 @@ const Index = () => {
               <Card className="border-2 border-rsvp-highlight shadow-lg">
                 <CardContent className="p-8 md:p-10">
                   <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-primary">
-                    RSVP
+                    💌 RSVP 💍
                   </h2>
 
                   <div className="space-y-6 mb-8">
