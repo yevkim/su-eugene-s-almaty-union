@@ -38,8 +38,8 @@ const Index = () => {
           </h1>
           <div className="space-y-2 text-base md:text-xl mb-8 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.3s' }}>
             <p>{t(
-              "08.08.2026 · Алматы, Казахстан",
-              "08.08.2026 · Алматы"
+              "08.08.2026 · Almaty, Kazakhstan",
+              "08.08.2026 · Алматы, Казахстан"
             )}</p>
           </div>
 
