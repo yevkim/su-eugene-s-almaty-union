@@ -69,31 +69,36 @@ const Index = () => {
       </section>
 
       {/* Our Story Section */}
-      <section id="story" className="relative min-h-[80vh] flex items-center justify-center">
-        <div className="absolute inset-0">
+      <section id="story" className="bg-background">
+        <div className="container-custom py-12">
+          <ScrollReveal>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-primary">
+              {t("Our Story", "Наша история")}
+            </h2>
+          </ScrollReveal>
+        </div>
+        
+        <div className="relative">
           <img
             src={storyProposal}
             alt={t("The proposal at Jewel Changi Airport", "Предложение в Jewel Changi Airport")}
-            className="w-full h-full object-cover"
+            className="w-full h-auto"
           />
-        </div>
-        
-        <div className="container-custom relative z-10 py-16">
-          <ScrollReveal>
-            <div className="max-w-2xl mx-auto mt-8 md:mt-16">
-              <div className="bg-background/80 backdrop-blur-sm rounded-lg p-8 md:p-12 text-center shadow-lg">
-                <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-primary">
-                  {t("Our Story", "Наша история")}
-                </h2>
-                <p className="text-lg text-foreground/90">
-                  {t(
-                    "We met upside down in a yoga class — literally. One chat after class turned into a lunch, then into many more dates, and everything else unfolded naturally from there. The rest of the story… we will save for the wedding.",
-                    "Мы встретились вверх ногами — в прямом смысле, на классе йоги. Один разговор после тренировки превратился в обед, потом в свидания… а дальше всё сложилось само собой. Полную историю расскажем уже на свадьбе."
-                  )}
-                </p>
+          
+          <div className="absolute top-0 left-0 right-0 p-4 md:p-8">
+            <ScrollReveal>
+              <div className="max-w-2xl mx-auto">
+                <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 md:p-8 text-center shadow-lg">
+                  <p className="text-base md:text-lg text-foreground/90">
+                    {t(
+                      "We met upside down in a yoga class — literally. One chat after class turned into a lunch, then into many more dates, and everything else unfolded naturally from there. The rest of the story… we will save for the wedding.",
+                      "Мы встретились вверх ногами — в прямом смысле, на классе йоги. Один разговор после тренировки превратился в обед, потом в свидания… а дальше всё сложилось само собой. Полную историю расскажем уже на свадьбе."
+                    )}
+                  </p>
+                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
