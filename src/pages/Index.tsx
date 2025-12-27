@@ -33,21 +33,24 @@ const Index = () => {
         </div>
 
         <div className="relative z-10 text-center text-foreground px-4">
-          <h1 className="font-serif text-5xl md:text-8xl font-bold mb-4 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.1s' }}>
+          <p className="text-lg md:text-2xl tracking-widest mb-4 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.1s' }}>
+            {t("SAVE THE DATE", "СОХРАНИТЕ ДАТУ")}
+          </p>
+          <h1 className="font-serif text-5xl md:text-8xl font-bold mb-4 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.2s' }}>
             {t("Eugene & June", "Евгений и Джун")}
           </h1>
-          <div className="space-y-2 text-base md:text-xl mb-8 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.3s' }}>
+          <div className="space-y-2 text-base md:text-xl mb-8 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.4s' }}>
             <p>{t(
-              "08.08.2026 · Almaty, Kazakhstan",
-              "08.08.2026 · Алматы, Казахстан"
+              "08.08.2026 · Suly Sai, Almaty, Kazakhstan",
+              "08.08.2026 · Сулы Сай, Алматы, Казахстан"
             )}</p>
           </div>
 
-          <div className="max-w-2xl mx-auto mb-10 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.5s' }}>
+          <div className="max-w-2xl mx-auto mb-10 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.6s' }}>
             <p className="text-base md:text-xl font-light">
               {t(
-                "We're getting married in the mountains of Kazakhstan and would love for you to celebrate with us.",
-                "Мы празднуем свадьбу в горах Заилийского Алатау и будем очень рады видеть вас."
+                "We are getting married in the mountains of Kazakhstan and would love for you to celebrate the union of KimChee with us.",
+                "Мы празднуем свадьбу в горах Казахстана и будем очень рады, если вы отпразднуете союз КимЧи вместе с нами."
               )}
             </p>
           </div>
