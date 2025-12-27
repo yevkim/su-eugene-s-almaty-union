@@ -21,7 +21,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative h-screen flex items-start justify-center overflow-hidden pt-24 md:pt-28">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
           style={{ 
