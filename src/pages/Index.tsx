@@ -34,7 +34,7 @@ const Index = () => {
 
         <div className="relative z-10 text-center text-foreground px-4">
           <h1 className="font-serif text-5xl md:text-8xl font-bold mb-4 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.1s' }}>
-            {t("June & Eugene", "Джун и Евгений")}
+            {t("Eugene & June", "Евгений и Джун")}
           </h1>
           <div className="space-y-2 text-base md:text-xl mb-8 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.3s' }}>
             <p>{t(
