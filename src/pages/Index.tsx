@@ -7,8 +7,8 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useParallax } from "@/hooks/useParallax";
-import heroImage from "@/assets/hero-hands.jpg";
-import storyProposal from "@/assets/story-proposal.jpg";
+import heroImage from "@/assets/story-proposal.jpg";
+import storyProposal from "@/assets/story-proposal2.jpeg";
 import almatyFlights from "@/assets/almaty-flights.png";
 import carAlmaty from "@/assets/car-almaty.jpg";
 import carBao from "@/assets/car-bao.jpg";
@@ -36,31 +36,37 @@ const Index = () => {
         </div>
 
         <div className="relative z-10 text-center text-foreground px-4">
-          <p style={{
-          animationDelay: '0.1s'
-        }} className="text-lg tracking-widest mb-4 opacity-0 animate-stagger-reveal font-serif font-extralight md:text-3xl text-center">
+          <p className="text-lg md:text-2xl tracking-widest mb-4 italic opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.1s' }}>
             {t("SAVE THE DATE", "СОХРАНИТЕ ДАТУ")}
           </p>
-          <h1 className="font-serif text-5xl md:text-8xl font-bold mb-4 opacity-0 animate-stagger-reveal" style={{
-          animationDelay: '0.2s'
-        }}>
+          <h1 className="font-serif text-5xl md:text-8xl mb-2 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.2s' }}>
             {t("Eugene & June", "Евгений и Джун")}
           </h1>
-          <div className="space-y-2 text-base md:text-xl mb-8 opacity-0 animate-stagger-reveal" style={{
-          animationDelay: '0.4s'
-        }}>
-            <p>{t("08.08.2026 · Suly Sai, Almaty, Kazakhstan", "08.08.2026 · Сулы Сай, Алматы, Казахстан")}</p>
-          </div>
-
-          <div className="max-w-2xl mx-auto mb-10 opacity-0 animate-stagger-reveal" style={{
-          animationDelay: '0.6s'
-        }}>
-            <p className="text-base md:text-xl font-light">
-              {t("We’re getting married in the mountains of Kazakhstan! Join us as we celebrate the union of KimChee.", "Мы женимся в Казахстане! Будем рады видеть вас на нашей свадьбе.")}
+          <div className="space-y-2 mb-8 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.4s' }}>
+            <p className="font-serif text-3xl md:text-5xl">
+              {t("8.8.2026", "8.8.2026")}
+            </p>
+            <p className="text-base md:text-xl py-4">
+              {t("Sulu Sai, Almaty, Kazakhstan", "Сулу Сай, Алматы, Казахстан")}
             </p>
           </div>
 
-          <div className="flex justify-center opacity-0 animate-stagger-reveal" style={{
+          <div className="max-w-2xl mx-auto mb-10 opacity-0 animate-stagger-reveal" style={{ animationDelay: '0.6s' }}>
+          <p className="text-base md:text-xl">
+              {t(
+                "We’re getting married in the mountains of Kazakhstan!",
+                "Мы женимся в Казахстане! "
+              )}
+            </p>
+            <p className="text-base md:text-xl">
+              {t(
+                "Join us as we celebrate the union of KimChee.",
+                "Будем рады видеть вас на нашей свадьбе."
+              )}
+            </p>
+          </div>
+
+          {/* <div className="flex justify-center opacity-20 animate-stagger-reveal" style={{
           animationDelay: '0.7s'
         }}>
             <Button size="lg" onClick={() => document.getElementById('rsvp')?.scrollIntoView({
@@ -69,15 +75,15 @@ const Index = () => {
               <Mail className="w-5 h-5" />
               {t("RSVP (invited guests only)", "Подтвердить участие")}
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Our Story Section */}
       <section id="story" className="bg-background">
-        <div className="container-custom py-12">
+        <div className="container-custom py-4">
           <ScrollReveal>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-primary">
+            <h2 className="font-serif text-4xl md:text-5xl text-center mb-4 text-primary">
               {t("Our Story", "Наша история")}
             </h2>
           </ScrollReveal>
@@ -85,19 +91,19 @@ const Index = () => {
 
         <div className="relative flex justify-center">
           <div className="relative w-full md:w-auto">
-            <img src={storyProposal} alt={t("The proposal at Jewel Changi Airport", "Предложение в Jewel Changi Airport")} className="w-full h-auto md:max-h-screen md:object-contain" />
-
-            <div className="absolute inset-0 flex items-start justify-center p-4 md:p-8">
-              <ScrollReveal>
-                <div className="w-full max-w-2xl px-4 md:px-8">
-                  <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 md:p-8 text-center shadow-lg">
-                    <p className="text-base md:text-lg text-foreground/90">
-                      {t("We met upside down in a yoga class. One chat turned into lunch, and the rest... we’ll save for the wedding.", "Мы познакомились на йоге — буквально вниз головой. Короткий разговор после занятия перерос в обед, а остальную историю мы расскажем уже на свадьбе.")}
-                    </p>
+            <div className="inset-0 flex items-start justify-center">
+                <ScrollReveal>
+                  <div className="w-full max-w-2xl py-4 px-4 md:px-8 text-center ">
+                    {/* <div className="bg-background/80  md:p-8 shadow-lg"> */}
+                      <p className="text-base md:text-lg text-foreground/90">
+                        {t("We met upside down in a yoga class. One chat turned into lunch, and the rest... we’ll save for the wedding.", "Мы познакомились на йоге — буквально вниз головой. Короткий разговор после занятия перерос в обед, а остальную историю мы расскажем уже на свадьбе.")}
+                      </p>
+                    {/* </div> */}
                   </div>
-                </div>
-              </ScrollReveal>
+                </ScrollReveal>
             </div>
+            <img src="src/assets/story_proposal2.jpeg" alt={t("The proposal at Jewel Changi Airport", "Предложение в Jewel Changi Airport")} className="w-full h-auto md:max-h-screen md:object-contain" />
+
           </div>
         </div>
       </section>
@@ -106,7 +112,7 @@ const Index = () => {
       <section id="wedding-day" className="section-padding bg-section-alt">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
+            <h2 className="font-serif text-4xl md:text-5xl text-center mb-6 text-primary">
               {t("Wedding Day", "Программа дня")}
             </h2>
           </ScrollReveal>
@@ -117,10 +123,10 @@ const Index = () => {
                 <CardContent className="p-8 space-y-6">
                   <div className="text-center space-y-4">
                     <p className="text-2xl font-serif text-primary">
-                      {t("8 August 2026", "8 августа 2026")}
+                      {t("8.8.2026", "8.8.2026")}
                     </p>
                     <p className="text-xl">
-                      Suly Sai Resort & SPA
+                      Sulu Sai Resort & SPA
                       <br />
                       <span className="text-base text-muted-foreground">
                         {t("Lesnaya Skazka, Oi Qaragai, Almaty, Kazakhstan", "Лесная Сказка, Ой Карагай, Алматы, Казахстан")}
@@ -130,7 +136,10 @@ const Index = () => {
 
                   <div className="space-y-4">
                     <p className="text-foreground/80">
-                      {t("We invite you to join us starting at 3:00 PM for an outdoor ceremony on the green lawn of Suly Sai, followed by a reception, dinner, and dancing until late in the resort’s Grand Hall.", "Ждем вас к 15:00 на церемонию под открытым небом на лужайке Сулу Сай, после чего мы переместимся в банкетный зал отеля на праздничный ужин и танцы до поздней ночи.")}
+                      {t(
+                        "We invite you to join us starting at 3:00 PM for an outdoor ceremony on the green lawn of Sulu Sai, followed by a reception, dinner, and dancing until late in the resort’s Grand Hall.",
+                        "Ждем вас к 15:00 на церемонию под открытым небом на лужайке Сулу Сай, после чего мы переместимся в банкетный зал отеля на праздничный ужин и танцы до поздней ночи."
+                      )}
                     </p>
 
                     <p className="text-foreground/70">
@@ -155,8 +164,8 @@ const Index = () => {
       <section id="travel-info" className="section-padding bg-background">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
-              {t("✈️ Travel & Stay 🏨", "✈️ Путешествие и проживание 🏨")}
+            <h2 className="font-serif text-4xl md:text-5xl text-center mb-6 text-primary">
+              {t("Travel & Stay", "Путешествие и проживание")}
             </h2>
           </ScrollReveal>
 
@@ -168,7 +177,7 @@ const Index = () => {
                 <AccordionTrigger className="hover:no-underline py-6">
                   <div className="flex items-center gap-3 text-left">
                     <Plane className="w-6 h-6 text-primary flex-shrink-0 animate-float" />
-                    <span className="font-serif text-xl md:text-2xl font-semibold text-primary">
+                    <span className="font-serif text-xl md:text-2xl text-primary">
                       {t("Travel to Kazakhstan", "Как добраться")}
                     </span>
                   </div>
@@ -191,7 +200,10 @@ const Index = () => {
                     <img src={almatyFlights} alt={t("Almaty Flights", "Рейсы в Алматы")} className="w-full h-full object-cover" />
                     <div className="p-4 bg-accent/20 rounded-lg border border-accent/30">
                       <p className="text-sm text-foreground/70">
-                        <strong>{t("Transport to venue:", "Трансфер к месту свадьбы:")}</strong> {t("Closer to the wedding, we'll share details about how to get from the city to Suly Sai.", "Накануне свадьбы мы подскажем, как удобнее добраться из города до Suly Sai.")}
+                        <strong>{t("Transport to venue:", "Трансфер к месту свадьбы:")}</strong> {t(
+                          "Closer to the wedding, we'll share details about how to get from the city to Sulu Sai.",
+                          "Накануне свадьбы мы подскажем, как удобнее добраться из города до Sulu Sai."
+                        )}
                       </p>
                     </div>
                   </div>
@@ -202,10 +214,8 @@ const Index = () => {
               <AccordionItem value="top-sights" className="border rounded-lg bg-card px-6">
                 <AccordionTrigger className="hover:no-underline py-6">
                   <div className="flex items-center gap-3 text-left">
-                    <MapPin className="w-6 h-6 text-primary flex-shrink-0 animate-float" style={{
-                      animationDelay: '0.3s'
-                    }} />
-                    <span className="font-serif text-xl md:text-2xl font-semibold text-primary">
+                    <MapPin className="w-6 h-6 text-primary flex-shrink-0 animate-float" style={{ animationDelay: '0.3s' }} />
+                    <span className="font-serif text-xl md:text-2xl text-primary">
                       {t("Top Sights", "Достопримечательности")}
                     </span>
                   </div>
@@ -229,7 +239,7 @@ const Index = () => {
                                   <img src={carAlmaty} alt={t("City Exploration", "Исследование города")} className="w-full h-full object-cover" />
                                 </div>
                                 <div>
-                                  <h4 className="font-serif text-lg font-semibold text-primary mb-2">
+                                  <h4 className="font-serif text-lg text-primary mb-1">
                                     {t("City Exploration", "Исследование города")}
                                   </h4>
                                   <p className="text-sm text-foreground/80">
@@ -244,7 +254,7 @@ const Index = () => {
                                   <img src={carBao} alt={t("Mountain Lakes", "Горные озёра")} className="w-full h-full object-cover" />
                                 </div>
                                 <div>
-                                  <h4 className="font-serif text-lg font-semibold text-primary mb-2">
+                                  <h4 className="font-serif text-lg text-primary mb-1">
                                     {t("Mountain Lakes", "Горные озёра")}
                                   </h4>
                                   <p className="text-sm text-foreground/80">
@@ -259,7 +269,7 @@ const Index = () => {
                                   <img src={carCharyn} alt={t("Charyn Canyon", "Чарынский каньон")} className="w-full h-full object-cover" />
                                 </div>
                                 <div>
-                                  <h4 className="font-serif text-lg font-semibold text-primary mb-2">
+                                  <h4 className="font-serif text-lg text-primary mb-1">
                                     {t("Charyn Canyon", "Чарынский каньон")}
                                   </h4>
                                   <p className="text-sm text-foreground/80">
@@ -274,7 +284,7 @@ const Index = () => {
                                   <img src={carKolsai} alt={t("Kolsai & Kaindy Lakes", "Озёра Кольсай и Каинды")} className="w-full h-full object-cover" />
                                 </div>
                                 <div>
-                                  <h4 className="font-serif text-lg font-semibold text-primary mb-2">
+                                  <h4 className="font-serif text-lg text-primary mb-1">
                                     {t("Kolsai & Kaindy Lakes", "Озёра Кольсай и Каинды")}
                                   </h4>
                                   <p className="text-sm text-foreground/80">
@@ -289,7 +299,7 @@ const Index = () => {
                                   <img src={carMountain} alt={t("Mountain Resorts", "Горные курорты")} className="w-full h-full object-cover" />
                                 </div>
                                 <div>
-                                  <h4 className="font-serif text-lg font-semibold text-primary mb-2">
+                                  <h4 className="font-serif text-lg text-primary mb-1">
                                     {t("Mountain Resorts & Relaxation", "Горные курорты и отдых")}
                                   </h4>
                                   <p className="text-sm text-foreground/80">
@@ -314,10 +324,8 @@ const Index = () => {
               <AccordionItem value="stay" className="border rounded-lg bg-card px-6">
                 <AccordionTrigger className="hover:no-underline py-6">
                   <div className="flex items-center gap-3 text-left">
-                    <Hotel className="w-6 h-6 text-primary flex-shrink-0 animate-float" style={{
-                      animationDelay: '1s'
-                    }} />
-                    <span className="font-serif text-xl md:text-2xl font-semibold text-primary">
+                    <Hotel className="w-6 h-6 text-primary flex-shrink-0 animate-float" style={{ animationDelay: '1s' }} />
+                    <span className="font-serif text-xl md:text-2xl text-primary">
                       {t("Where to Stay", "Проживание")}
                     </span>
                   </div>
@@ -338,7 +346,7 @@ const Index = () => {
                           animationDelay: '1.5s'
                         }} />
                         <div>
-                          <h4 className="font-semibold text-primary mb-2">Oi Qaragai (Lesnaya Skazka)</h4>
+                          <h4 className="text-primary mb-1">Oi Qaragai (Lesnaya Skazka)</h4>
                           <p className="text-sm text-muted-foreground">
                             {t("If you like the idea of waking up in the mountains, places like Oi Qaragai are great for a short getaway before or after the wedding.", "Если вы хотите просыпаться с видом на горы, Oi Qaragai («Лесная сказка») — отличное место, чтобы отдохнуть пару дней.")}
                           </p>
@@ -354,10 +362,8 @@ const Index = () => {
               <AccordionItem value="faqs" className="border rounded-lg bg-card px-6">
                 <AccordionTrigger className="hover:no-underline py-6">
                   <div className="flex items-center gap-3 text-left">
-                    <FileText className="w-6 h-6 text-primary flex-shrink-0 animate-float" style={{
-                      animationDelay: '2s'
-                    }} />
-                    <span className="font-serif text-xl md:text-2xl font-semibold text-primary">
+                    <FileText className="w-6 h-6 text-primary flex-shrink-0 animate-float" style={{ animationDelay: '2s' }} />
+                    <span className="font-serif text-xl md:text-2xl text-primary">
                       {t("FAQs", "Часто задаваемые вопросы")}
                     </span>
                   </div>
@@ -365,27 +371,27 @@ const Index = () => {
                 <AccordionContent className="pb-6">
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-semibold mb-2">{t("What will the weather be like?", "Какая погода будет?")}</h4>
+                      <h4 className="mb-1">{t("What will the weather be like?", "Какая погода будет?")}</h4>
                       <p className="text-sm text-muted-foreground">
                         {t("Early August in Almaty is usually warm in the city (~30°C) and cooler in the mountains, especially in the evenings. Bring a light layer for nights outdoors.", "В начале августа в Алматы обычно жарко (~30°C), но в горах прохладнее, особенно по вечерам. Возьмите с собой легкую куртку или кардиган для вечерних прогулок.")}
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2">{t("What currency is used?", "Какая валюта используется?")}</h4>
+                      <h4 className="mb-1">{t("What currency is used?", "Какая валюта используется?")}</h4>
                       <p className="text-sm text-muted-foreground">
                         {t("The local currency is the Kazakhstani Tenge (KZT). Cards (Visa/Mastercard) are widely accepted in cafes and shops, but it's good to have some cash for markets or small tips. You can exchange USD or EUR easily at local exchange offices.", "Официальная валюта — казахстанский тенге (KZT). Почти везде принимают карты (Visa/Mastercard), но для рынков или чаевых лучше иметь при себе немного наличных. Обменять валюту (USD/EUR) можно в любом обменнике города.")}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-2">{t("Which apps should I download?", "Какие приложения мне нужно скачать?")}</h4>
+                      <h4 className="mb-1">{t("Which apps should I download?", "Какие приложения мне нужно скачать?")}</h4>
                       <p className="text-sm text-muted-foreground">
                         {t("For taxis and food delivery, download Yandex Go (works like Uber or Grab). For city navigation and finding the best spots, 2GIS is more detailed than Google Maps.", "Для заказа такси и доставки еды скачайте Yandex Go (работает как Uber или Grab). А для навигации и поиска мест лучше всего использовать 2GIS — он здесь точнее, чем Google Maps.")}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-2">{t("What about food and dietary restrictions?", "Что насчет еды?")}</h4>
+                      <h4 className="mb-1">{t("What about food and dietary restrictions?", "Что насчет еды?")}</h4>
                       <p className="text-sm text-muted-foreground">
                         {t("Please let us know about any allergies or restrictions in your RSVP form so we can plan the menu accordingly.", "Пожалуйста, укажите ваши диетические предпочтения или аллергии в форме RSVP, чтобы мы могли это учесть при составлении меню.")}
                       </p>
@@ -407,8 +413,8 @@ const Index = () => {
             <div className="max-w-3xl mx-auto">
               <Card className="border-2 border-rsvp-highlight shadow-lg">
                 <CardContent className="p-8 md:p-10">
-                  <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-8 text-primary">
-                    💌 RSVP 💍
+                  <h2 className="font-serif text-4xl md:text-5xl text-center mb-4 text-primary">
+                    RSVP
                   </h2>
 
                   <div className="space-y-6 mb-8">
@@ -421,7 +427,7 @@ const Index = () => {
                   </div>
 
                   <div className="text-center">
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-12 gap-2" onClick={() => window.open('https://notion.so/your-rsvp-form', '_blank')}>
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-12 gap-2" onClick={() => window.open('https://forms.gle/LgEozZW4r5iap4ex8', '_blank')}>
                       <Mail className="w-5 h-5" />
                       {t("RSVP now", "Заполнить RSVP")}
                     </Button>
