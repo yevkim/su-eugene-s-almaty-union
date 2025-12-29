@@ -81,7 +81,7 @@ const Index = () => {
 
       {/* Our Story Section */}
       <section id="story" className="bg-background">
-        <div className="container-custom pt-16 md:pt-24 pb-2">
+        <div className="container-custom pt-12 md:pt-16 pb-2">
           <ScrollReveal>
             <h2 className="font-serif text-4xl md:text-5xl text-center mb-2 text-primary">
               {t("Our Story", "Наша история")}
@@ -109,10 +109,10 @@ const Index = () => {
       </section>
 
       {/* Wedding Day Section */}
-      <section id="wedding-day" className="section-padding bg-section-alt">
+      <section id="wedding-day" className="pt-12 md:pt-16 pb-4 md:pb-8 bg-section-alt">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="font-serif text-4xl md:text-5xl text-center mb-6 text-primary">
+            <h2 className="font-serif text-4xl md:text-5xl text-center mb-4 text-primary">
               {t("Wedding Day", "Программа дня")}
             </h2>
           </ScrollReveal>
@@ -161,10 +161,10 @@ const Index = () => {
       </section>
 
       {/* Collapsible Travel Info Sections */}
-      <section id="travel-info" className="section-padding bg-background">
+      <section id="travel-info" className="pt-12 md:pt-16 pb-4 md:pb-8 bg-background">
         <div className="container-custom">
           <ScrollReveal>
-            <h2 className="font-serif text-4xl md:text-5xl text-center mb-6 text-primary">
+            <h2 className="font-serif text-4xl md:text-5xl text-center mb-4 text-primary">
               {t("Travel & Stay", "Путешествие и проживание")}
             </h2>
           </ScrollReveal>
@@ -407,7 +407,7 @@ const Index = () => {
       </section>
 
       {/* RSVP Section - Highlighted */}
-      <section id="rsvp" className="section-padding bg-rsvp-highlight/30">
+      <section id="rsvp" className="pt-12 md:pt-16 pb-8 md:pb-12 bg-rsvp-highlight/30">
         <div className="container-custom">
           <ScrollReveal animation="reveal-scale">
             <div className="max-w-3xl mx-auto">
