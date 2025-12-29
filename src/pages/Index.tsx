@@ -102,7 +102,7 @@ const Index = () => {
                   </div>
                 </ScrollReveal>
             </div>
-            <img src="src/assets/story_proposal2.jpeg" alt={t("The proposal at Jewel Changi Airport", "Предложение в Jewel Changi Airport")} className="w-full h-auto md:max-h-screen md:object-contain" />
+            <img src={storyProposal} alt={t("The proposal at Jewel Changi Airport", "Предложение в Jewel Changi Airport")} className="w-full h-auto md:max-h-screen md:object-contain" />
 
           </div>
         </div>
@@ -126,7 +126,7 @@ const Index = () => {
                       {t("8.8.2026", "8.8.2026")}
                     </p>
                     <p className="text-xl">
-                      Sulu Sai Resort & SPA
+                      {t("Sulu Sai Mountain Resort", "Горный Курорт Сулу Сай")}
                       <br />
                       <span className="text-base text-muted-foreground">
                         {t("Lesnaya Skazka, Oi Qaragai, Almaty, Kazakhstan", "Лесная Сказка, Ой Карагай, Алматы, Казахстан")}
@@ -420,7 +420,7 @@ const Index = () => {
                   <div className="space-y-6 mb-8">
                     <div className="text-center">
                       <p className="text-lg text-foreground/80">
-                        {t("We can’t wait to celebrate with you! Invited guests only: Please RSVP by [Date].", "Мы очень ждем встречи с вами! Только для приглашенных гостей: Пожалуйста, подтвердите участие до [Дата].")}
+                        {t("We can’t wait to celebrate with you! Invited guests only: Please RSVP by 31 January 2026.", "Мы очень ждем встречи с вами! Только для приглашенных гостей: Пожалуйста, подтвердите участие до 31 Января 2026.")}
                       </p>
                     </div>
 

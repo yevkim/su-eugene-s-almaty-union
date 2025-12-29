@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
@@ -44,7 +44,7 @@ All colors MUST be HSL.
     --section-alt: 40 25% 93%;  /* Alternating section background */
     --rsvp-highlight: 345 45% 55%;  /* Berry highlight for RSVP */
     --soft-green: 90 30% 75%;  /* Soft green foliage */
-    
+
     /* Typography */
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Inter', sans-serif;
@@ -104,13 +104,13 @@ All colors MUST be HSL.
   .font-serif {
     font-family: var(--font-serif);
   }
-  
+
   .font-sans {
     font-family: var(--font-sans);
   }
 
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-4 md:py-4 lg:py-8;
   }
 
   .container-custom {
