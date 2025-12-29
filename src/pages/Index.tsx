@@ -81,9 +81,9 @@ const Index = () => {
 
       {/* Our Story Section */}
       <section id="story" className="bg-background">
-        <div className="container-custom py-4">
+        <div className="container-custom pt-16 md:pt-24 pb-2">
           <ScrollReveal>
-            <h2 className="font-serif text-4xl md:text-5xl text-center mb-4 text-primary">
+            <h2 className="font-serif text-4xl md:text-5xl text-center mb-2 text-primary">
               {t("Our Story", "Наша история")}
             </h2>
           </ScrollReveal>
